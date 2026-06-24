@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sadhguru Krupa - Sacred Heritage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #FF9933; /* Safron color similar to Sringeri */
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #8B0000, #B22222);
+            color: white;
+            padding: 15px 0;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            margin-right: 15px;
+            color: #FFD700;
+        }
+        
+        .temple-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .guru-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #FFD700;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        
+        .guru-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* News Scroll Bar */
+        .news-scroll-bar {
+            background-color: #000;
+            color: #FFD700;
+            padding: 8px 0;
+            overflow: hidden;
+            position: relative;
+            margin-top: 5px;
+        }
+        
+        .news-container {
+            display: flex;
+            animation: scroll-left 30s linear infinite;
+            padding: 0 20px;
+        }
+        
+        .news-item {
+            white-space: nowrap;
+            margin-right: 40px;
+            font-weight: 500;
+        }
+        
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: #8B0000;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #8B0000;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #FFA500;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Content Sections */
+        .section {
+            padding: 50px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #8B0000;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #FFD700, #B22222);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .feature-card:hover .feature-img img {
+            transform: scale(1.1);
+        }
+        
+        .feature-content {
+            padding: 20px;
+        }
+        
+        .feature-content h3 {
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+        
+        /* Events Section */
+        .events {
+            background-color: #f0e6d2;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 20px;
+        }
+        
+        .event-date {
+            background: linear-gradient(to bottom, #8B0000, #B22222);
+            color: white;
+            min-width: 80px;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px 0;
+        }
+        
+        .event-date .day {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .event-date .month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        .event-details h3 {
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+        
+        /* Library Section */
+        .library-section {
+            background-color: #f0e6d2;
+            padding: 50px 0;
+        }
+        
+        .library-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .library-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .library-card h3 {
+            color: #8B0000;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .file-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .file-list li {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .file-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .file-name {
+            display: flex;
+            align-items: center;
+        }
+        
+        .file-icon {
+            margin-right: 10px;
+            color: #8B0000;
+        }
+        
+        .download-btn {
+            background-color: #8B0000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background-color: #B22222;
+        }
+        
+        .upload-form {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #f8f4f0;
+            border-radius: 8px;
+        }
+        
+        .upload-form h4 {
+            color: #8B0000;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            background-color: #FFD700;
+            color: #8B0000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #FFA500;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #000, #333);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #FFD700;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #FFD700;
+            padding-left: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: #FFD700;
+            color: #8B0000;
+            transform: translateY(-5px);
+        }
+        
+        /* WhatsApp Button in Community */
+        .whatsapp-community {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp-community:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            background: linear-gradient(to right, #8B0000, #B22222);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(to right, #B22222, #8B0000);
+        }
+
+        /* Secret Admin Button */
+        .secret-admin-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0, 0, 0, 0.15);
+            color: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            opacity: 0.35;
+        }
+
+        .secret-admin-btn:hover {
+            opacity: 1;
+            background: rgba(139, 0, 0, 0.85);
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        .secret-admin-btn.admin-active {
+            opacity: 0.9;
+            background: rgba(37, 211, 102, 0.85);
+            color: white;
+        }
+
+        /* Admin Login Modal */
+        .admin-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-modal-overlay.active {
+            display: flex;
+        }
+
+        .admin-modal {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            width: 90%;
+            max-width: 380px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .admin-modal h3 {
+            color: #8B0000;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .admin-modal p {
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .admin-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .admin-modal input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .admin-modal-error {
+            color: #c0392b;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        .admin-modal-error.show {
+            display: block;
+        }
+
+        .admin-login-btn {
+            width: 100%;
+            background: linear-gradient(to right, #8B0000, #B22222);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .admin-login-btn:hover {
+            background: linear-gradient(to right, #B22222, #8B0000);
+        }
+
+        /* Upload Lock State */
+        .upload-card.locked .upload-form {
+            display: none;
+        }
+
+        .upload-locked-msg {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+        }
+
+        .upload-locked-msg i {
+            font-size: 2.5rem;
+            color: #ccc;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .upload-card:not(.locked) .upload-locked-msg {
+            display: none;
+        }
+
+        .admin-bar {
+            display: none;
+            background: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .admin-bar.active {
+            display: flex;
+        }
+
+        .admin-bar span {
+            color: #2e7d32;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .admin-logout-btn {
+            background: #8B0000;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .file-list-empty {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-style: italic;
+        }
+
+        .admin-delete-btn {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 8px;
+        }
+
+        .upload-toast {
+            display: none;
+            position: fixed;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2e7d32;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            z-index: 2001;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .upload-toast.show {
+            display: block;
+        }
+
+        .upload-toast.error {
+            background: #c0392b;
+        }
+        
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .carousel-slide {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            color: white;
+            min-height: 300px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .carousel-slide.active {
+            display: flex;
+        }
+
+        .carousel-slide h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-slide p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .carousel-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #FFD700;
+            transform: scale(1.2);
+        }
+
+        /* Responsive carousel */
+        @media (max-width: 768px) {
+            .carousel-slide h1 {
+                font-size: 1.8rem;
+            }
+            
+            .carousel-slide p {
+                font-size: 1.1rem;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .guru-container {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .library-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Secret Admin Button (bottom-left) -->
+    <button type="button" class="secret-admin-btn" id="secretAdminBtn" title="Admin" aria-label="Admin access">
+        <i class="fas fa-lock"></i>
+    </button>
+
+    <!-- Admin Login Modal -->
+    <div class="admin-modal-overlay" id="adminModal">
+        <div class="admin-modal">
+            <button type="button" class="admin-modal-close" id="adminModalClose">&times;</button>
+            <h3 data-i18n="admin_login_title">Admin Access</h3>
+            <p data-i18n="admin_login_desc">Enter passcode to unlock upload</p>
+            <div class="admin-modal-error" id="adminLoginError" data-i18n="admin_login_error">Incorrect passcode</div>
+            <input type="password" id="adminPasscode" placeholder="Enter passcode" data-i18n-placeholder="admin_passcode_placeholder" autocomplete="off">
+            <button type="button" class="admin-login-btn" id="adminLoginBtn"><span data-i18n="admin_login_btn">Unlock Upload</span></button>
+        </div>
+    </div>
+
+    <div class="upload-toast" id="uploadToast"></div>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button type="button" class="lang-btn" id="langToggle">
+            <i class="fas fa-language"></i>
+            <span id="currentLang">తెలుగు</span>
+        </button>
+    </div>
+
+    <!-- News Scroll Bar -->
+    <div class="news-scroll-bar">
+        <div class="news-container">
+            <div class="news-item" data-i18n="news_1">Sri Sadhguru Krupa 50 years of divine service</div>
+            <div class="news-item" data-i18n="news_2">New educational program launched for youth spiritual development</div>
+            <div class="news-item" data-i18n="news_3">Temple community volunteers participate in local charity drive</div>
+            <div class="news-item" data-i18n="news_4">Special puja ceremony for Lord Ranganatha on upcoming Sunday</div>
+            <div class="news-item" data-i18n="news_5">Temple restoration project completed successfully with community support</div>
+            <div class="news-item" data-i18n="news_6">Annual festival preparations begin with grand cultural program planning</div>
+        </div>
+    </div>
+    
+    <!-- Header with Guru Photos -->
+   <!-- Header with Guru Photos -->
+<header>
+    <div class="container header-content">
+        <div class="guru-container">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Guru Photo 1" data-i18n-alt="guru_photo_1" class="guru-photo">
+        </div>
+        
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-dharmachakra"></i>
+            </div>
+            <div class="temple-name" data-i18n="temple_name">Sri Sadhguru Krupa</div>
+        </div>
+        
+        <div class="guru-container">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Guru Photo 2" data-i18n-alt="guru_photo_2" class="guru-photo">
+        </div>
+    </div>
+</header>
+
+    
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> <span data-i18n="nav_home">Home</span></a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> <span data-i18n="nav_about">About Us</span></a></li>
+                <li><a href="#events"><i class="fas fa-calendar-alt"></i> <span data-i18n="nav_events">Events</span></a></li>
+                <li><a href="#community"><i class="fas fa-users"></i> <span data-i18n="nav_community">Community</span></a></li>
+                <li><a href="#library"><i class="fas fa-file-alt"></i> <span data-i18n="nav_library">Library</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <h1 data-i18n="hero1_title">Experience the Divine Presence of Sri Ranganatha Swamy</h1>
+                    <p data-i18n="hero1_desc">A sacred heritage temple dedicated to Lord Vishnu, offering spiritual solace and divine blessings to all who visit.</p>
+                    <a href="#about" class="btn"><span data-i18n="hero1_btn">Learn More</span></a>
+                </div>
+                <div class="carousel-slide">
+                    <h1 data-i18n="hero2_title">Join Our Sacred Community</h1>
+                    <p data-i18n="hero2_desc">Connect with fellow devotees and participate in our spiritual activities and services.</p>
+                    <a href="#community" class="btn"><span data-i18n="hero2_btn">Join Now</span></a>
+                </div>
+                <div class="carousel-slide">
+                    <h1 data-i18n="hero3_title">Explore Ancient Wisdom</h1>
+                    <p data-i18n="hero3_desc">Discover the rich traditions and sacred texts that guide our spiritual journey.</p>
+                    <a href="#texts" class="btn"><span data-i18n="hero3_btn">Learn More</span></a>
+                </div>
+            </div>
+            
+            <div class="carousel-controls">
+                <button type="button" class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button type="button" class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about_title">Our Sacred Heritage</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="about_text1">Sri Sadhguru Krupa stands as a beacon of spiritual light in the heart of our community. Established over centuries, this sacred place has been a source of peace and guidance for countless devotees.</p>
+                    <a href="#community" class="btn"><span data-i18n="btn_join_community">Join Our Community</span></a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Temple Architecture" data-i18n-alt="temple_arch_alt">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="services_title">Temple Services</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Daily Pooja" data-i18n-alt="daily_pooja_alt">
+                    </div>
+                    <div class="feature-content">
+                        <h3 data-i18n="feature1_title">Daily Poojas</h3>
+                        <p data-i18n="feature1_desc">Regular daily rituals</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1589023640715-01211b01d900?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cultural Events" data-i18n-alt="cultural_alt">
+                    </div>
+                    <div class="feature-content">
+                        <h3 data-i18n="feature2_title">Cultural Programs</h3>
+                        <p data-i18n="feature2_desc">Regular cultural events</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1574622626067-4322d0a49f3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Community Service" data-i18n-alt="community_service_alt">
+                    </div>
+                    <div class="feature-content">
+                        <h3 data-i18n="feature3_title">Community Service</h3>
+                        <p data-i18n="feature3_desc">Various social service initiatives</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Events Section -->
+<section id="events" class="section events">
+    <div class="container">
+        <h2 class="section-title" data-i18n="events_title">Upcoming Events</h2>
+        
+        <div class="event-card">
+            <div class="event-date">
+                <div class="day">15</div>
+                <div class="month" data-i18n="event1_month">Dec</div>
+            </div>
+            <div class="event-details">
+                <h3 data-i18n="event1_title">Ranganatha Jayanti Festival</h3>
+                <p data-i18n="event1_desc">Celebration of the birth anniversary of Sri Ranganatha Swamy with special prayers, cultural programs, and community feasts.</p>
+                <p data-i18n-html="event1_time"><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM | <i class="fas fa-map-marker-alt"></i> Temple Grounds</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-date">
+                <div class="day">28</div>
+                <div class="month" data-i18n="event2_month">Dec</div>
+            </div>
+            <div class="event-details">
+                <h3 data-i18n="event2_title">Annual Charity Drive</h3>
+                <p data-i18n="event2_desc">Temple organized donation drive for local underprivileged families with food, clothing, and essential supplies.</p>
+                <p data-i18n-html="event2_time"><i class="fas fa-clock"></i> 10:00 AM - 4:00 PM | <i class="fas fa-map-marker-alt"></i> Temple Hall</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Community Section -->
+    <section id="community" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="community_title">Our Community</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="community_text1">Our temple community is a diverse group of individuals united by their spiritual beliefs and shared devotion to Lord Ranganatha Swamy.</p>
+                    <p data-i18n="community_text2">We welcome people from all backgrounds, ages, and walks of life to participate in our activities, events, and services.</p>
+                    <p data-i18n="community_text3">Join our community to connect with fellow devotees, participate in spiritual discussions, and contribute to our charitable initiatives.</p>
+                    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-community">
+                        <i class="fab fa-whatsapp"></i> <span data-i18n="whatsapp_btn">Join Our WhatsApp Community</span>
+                    </a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Community Gathering" data-i18n-alt="community_alt">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Library Section -->
+    <section id="library" class="section library-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="library_title">Temple Library & Resources</h2>
+            <div class="library-container">
+                <div class="library-card">
+                    <h3 data-i18n="download_resources">Download Resources</h3>
+                    <ul class="file-list" id="fileList">
+                        <li class="file-list-empty" id="fileListEmpty">
+                            <span data-i18n="no_files_msg">No resources available yet. Check back soon.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="library-card upload-card locked" id="uploadCard">
+                    <h3 data-i18n="upload_resources">Upload Resources</h3>
+                    <div class="admin-bar" id="adminBar">
+                        <span><i class="fas fa-check-circle"></i> <span data-i18n="admin_logged_in">Admin mode active</span></span>
+                        <button type="button" class="admin-logout-btn" id="adminLogoutBtn"><span data-i18n="admin_logout">Logout</span></button>
+                    </div>
+                    <div class="upload-locked-msg" id="uploadLockedMsg">
+                        <i class="fas fa-lock"></i>
+                        <p data-i18n="upload_locked_msg">Upload is restricted to administrators.</p>
+                    </div>
+                    <div class="upload-form" id="uploadForm">
+                        <h4 data-i18n="upload_heading">Share your spiritual content</h4>
+                        <div class="form-group">
+                            <label for="file-title" data-i18n="label_title">Title</label>
+                            <input type="text" id="file-title" placeholder="Enter resource title" data-i18n-placeholder="placeholder_title">
+                        </div>
+                        <div class="form-group">
+                            <label for="file-description" data-i18n="label_description">Description</label>
+                            <textarea id="file-description" rows="3" placeholder="Describe your resource" data-i18n-placeholder="placeholder_description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="file-upload" data-i18n="label_upload">Upload File</label>
+                            <input type="file" id="file-upload">
+                        </div>
+                        <div class="form-group">
+                            <label for="file-type" data-i18n="label_type">Resource Type</label>
+                            <select id="file-type">
+                                <option value="pdf" data-i18n="opt_pdf">PDF Document</option>
+                                <option value="audio" data-i18n="opt_audio">Audio File</option>
+                                <option value="video" data-i18n="opt_video">Video File</option>
+                                <option value="image" data-i18n="opt_image">Image</option>
+                                <option value="document" data-i18n="opt_document">Word Document</option>
+                            </select>
+                        </div>
+                        <button type="button" class="submit-btn" id="uploadSubmitBtn"><span data-i18n="upload_btn">Upload Resource</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 data-i18n="footer_info">Temple Information</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_location">Location & Directions</span></a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> <span data-i18n="footer_timings">Timings & Pooja Schedule</span></a></li>
+                        <li><a href="#"><i class="fas fa-user-friends"></i> <span data-i18n="footer_leaders">Our Spiritual Leaders</span></a></li>
+                        <li><a href="#"><i class="fas fa-history"></i> <span data-i18n="footer_history">Temple History</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-i18n="footer_links">Quick Links</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-donate"></i> <span data-i18n="footer_donate">Donate Online</span></a></li>
+                        <li><a href="#"><i class="fas fa-calendar-check"></i> <span data-i18n="footer_book">Book Pooja</span></a></li>
+                        <li><a href="#"><i class="fas fa-book-open"></i> <span data-i18n="footer_library">Temple Library</span></a></li>
+                        <li><a href="#"><i class="fas fa-video"></i> <span data-i18n="footer_videos">Temple Videos</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 data-i18n="footer_contact">Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">123 Sacred Path, Divine City</span></li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@sriranganathaswamy.org</li>
+                        <li><i class="fas fa-clock"></i> <span data-i18n="footer_hours">Open Daily: 6:00 AM - 9:00 PM</span></li>
+                    </ul>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p data-i18n="copyright">&copy; 2023 Sri Ranganatha Swamy Temple. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include your JavaScript at the end of body -->
+    <script src="script.js"></script>
+</body>
+</html>
